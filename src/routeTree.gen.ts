@@ -10,13 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as EvaluationWorkRouteImport } from './routes/evaluation-work'
 import { Route as FailureLibraryRouteImport } from './routes/failure-library'
 import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as ResumeRouteImport } from './routes/resume'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EvaluationWorkRoute = EvaluationWorkRouteImport.update({
@@ -34,40 +41,71 @@ const MethodologyRoute = MethodologyRouteImport.update({
   path: '/methodology',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResumeRoute = ResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/evaluation-work': typeof EvaluationWorkRoute
   '/failure-library': typeof FailureLibraryRoute
   '/methodology': typeof MethodologyRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/evaluation-work': typeof EvaluationWorkRoute
   '/failure-library': typeof FailureLibraryRoute
   '/methodology': typeof MethodologyRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/evaluation-work': typeof EvaluationWorkRoute
   '/failure-library': typeof FailureLibraryRoute
   '/methodology': typeof MethodologyRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/evaluation-work' | '/failure-library' | '/methodology'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/evaluation-work'
+    | '/failure-library'
+    | '/methodology'
+    | '/resume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/evaluation-work' | '/failure-library' | '/methodology'
+  to:
+    | '/'
+    | '/about'
+    | '/evaluation-work'
+    | '/failure-library'
+    | '/methodology'
+    | '/resume'
   id:
-    '__root__' | '/' | '/evaluation-work' | '/failure-library' | '/methodology'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/evaluation-work'
+    | '/failure-library'
+    | '/methodology'
+    | '/resume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   EvaluationWorkRoute: typeof EvaluationWorkRoute
   FailureLibraryRoute: typeof FailureLibraryRoute
   MethodologyRoute: typeof MethodologyRoute
+  ResumeRoute: typeof ResumeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -77,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/evaluation-work': {
@@ -100,14 +145,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MethodologyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resume': {
+      id: '/resume'
+      path: '/resume'
+      fullPath: '/resume'
+      preLoaderRoute: typeof ResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   EvaluationWorkRoute: EvaluationWorkRoute,
   FailureLibraryRoute: FailureLibraryRoute,
   MethodologyRoute: MethodologyRoute,
+  ResumeRoute: ResumeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
