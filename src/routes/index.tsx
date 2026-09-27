@@ -125,11 +125,11 @@ function HomePage() {
       {/* Trust metrics */}
       <section className="border-b bg-paper">
         <Container>
-          <dl className="grid divide-y sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
-            {TRUST_METRICS.map((m, i) => (
+          <dl className="grid divide-y divide-border sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
+            {TRUST_METRICS.map((m) => (
               <div
                 key={m.value}
-                className={`py-8 sm:px-8 sm:py-10 ${i > 0 ? "sm:border-l" : ""} ${i === 2 ? "lg:border-l sm:border-l-0 lg:pt-10 sm:pt-0" : ""} ${i % 2 === 1 ? "sm:border-l" : ""} ${i < 2 ? "" : "sm:border-t lg:border-t-0"} ${i === 0 ? "sm:pl-0" : ""}`}
+                className="py-8 first:pt-8 sm:px-8 sm:py-10 sm:first:pl-0"
               >
                 <dt className="display-md">{m.value}</dt>
                 <dd className="label-eyebrow mt-2 text-muted-foreground">{m.label}</dd>
