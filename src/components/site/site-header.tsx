@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Container } from "@/components/site/primitives";
+import { Button } from "@/components/ui/button";
 import { LINKS, PERSON } from "@/lib/site-content";
 import { cn } from "@/lib/utils";
 
@@ -36,68 +37,72 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-background/85 backdrop-blur-md transition-shadow",
+        "sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl transition-shadow",
         scrolled && "shadow-card",
       )}
     >
       <Container>
-        <div className="flex h-16 items-center justify-between gap-6">
+        <div className="flex min-h-20 items-center justify-between gap-4 py-2.5 xl:min-h-24 xl:gap-6">
           <Link
             to="/"
-            className="group flex min-w-0 items-center gap-3"
+            className="group flex min-w-0 shrink items-center gap-3 sm:gap-4"
             onClick={() => setOpen(false)}
+            aria-label="Manish Kumar Singh — Home"
           >
             <span
               aria-hidden="true"
-              className="grid size-7 shrink-0 place-items-center rounded-sm border border-border bg-card font-mono text-[11px] font-medium tracking-tight"
+              className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-card bg-accent text-base font-semibold text-accent-foreground shadow-card ring-1 ring-border transition-transform duration-300 group-hover:scale-105 sm:size-14"
             >
               MS
             </span>
             <span className="min-w-0">
-              <span className="block truncate text-sm font-medium tracking-tight">
+              <span className="block font-display text-[1.22rem] leading-tight font-semibold text-foreground transition-colors group-hover:text-signal sm:text-[1.5rem]">
                 {PERSON.name}
               </span>
-              <span className="label-eyebrow hidden text-muted-foreground sm:block">
+              <span className="mt-1 hidden text-[10px] font-semibold uppercase text-signal sm:block">
                 AI Evaluation • Research
               </span>
             </span>
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Primary" className="hidden shrink-0 items-center gap-0.5 xl:flex">
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="rounded-sm px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                activeProps={{ className: "text-foreground" }}
+                className="group relative px-2.5 py-3 text-[0.875rem] font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground"
+                activeProps={{ className: "text-foreground [&_.nav-indicator]:scale-x-100" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
+                <span aria-hidden="true" className="nav-indicator absolute inset-x-2.5 bottom-1 h-0.5 origin-left scale-x-0 bg-signal transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
             ))}
             <a
               href={LINKS.engineeringPortfolio}
-              className="ml-3 inline-flex items-center rounded-sm border border-foreground px-3.5 py-2 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
+              className="ml-3 inline-flex items-center rounded-full bg-primary px-4 py-2.5 text-[0.875rem] font-semibold whitespace-nowrap text-primary-foreground shadow-card transition-colors hover:bg-signal"
             >
               Engineering Portfolio
             </a>
           </nav>
 
-          <button
+          <Button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-sm border border-border lg:hidden"
+            variant="outline"
+            size="icon"
+            className="size-11 shrink-0 rounded-full xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
+            {open ? <X /> : <Menu />}
+          </Button>
         </div>
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t bg-background lg:hidden">
+        <div id="mobile-nav" className="border-t bg-background xl:hidden">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col py-3">
               {NAV.map((item) => (
@@ -105,8 +110,8 @@ export function SiteHeader() {
                   key={item.to}
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="border-b border-border/70 py-3.5 text-base text-muted-foreground last:border-0"
-                  activeProps={{ className: "text-foreground" }}
+                  className="border-b border-border/70 py-3.5 text-base font-medium text-muted-foreground transition-colors hover:text-signal last:border-0"
+                  activeProps={{ className: "text-signal" }}
                   activeOptions={{ exact: item.to === "/" }}
                 >
                   {item.label}
@@ -115,7 +120,7 @@ export function SiteHeader() {
               <a
                 href={LINKS.engineeringPortfolio}
                 onClick={() => setOpen(false)}
-                className="mt-4 mb-4 inline-flex items-center justify-center rounded-sm border border-foreground px-4 py-2.5 text-sm font-medium"
+                className="mt-4 mb-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-signal"
               >
                 Engineering Portfolio
               </a>
