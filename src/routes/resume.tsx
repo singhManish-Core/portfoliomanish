@@ -139,7 +139,7 @@ function ResumePage() {
                       className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
                     >
                       <Mail aria-hidden="true" className="size-4 text-muted-foreground" />
-                      {LINKS.emailLabel}
+                      Email
                     </a>
                   </li>
                   <li>

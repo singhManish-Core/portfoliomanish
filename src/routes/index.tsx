@@ -405,24 +405,17 @@ function HomePage() {
           <Reveal delay={100}>
             <ul className="overflow-hidden rounded-md border border-ink-border">
               {[
-                { label: "Email", value: LINKS.emailLabel, href: LINKS.email },
-                 { label: "LinkedIn", value: "manish-singh-bb2450285", href: LINKS.linkedin },
-                 { label: "GitHub", value: "singhManish-Core", href: LINKS.github },
-                {
-                  label: "Engineering Portfolio",
-                   value: "manish-personalportfolio.netlify.app",
-                  href: LINKS.engineeringPortfolio,
-                },
+                { label: "Email", href: LINKS.email },
+                { label: "LinkedIn", href: LINKS.linkedin },
+                { label: "GitHub", href: LINKS.github },
+                { label: "Engineering Portfolio", href: LINKS.engineeringPortfolio },
               ].map((row) => (
                 <li key={row.label} className="border-b border-ink-border last:border-0">
                   <a
                     href={row.href}
                     className="group flex items-center justify-between gap-5 px-6 py-5 transition-colors hover:bg-ink-foreground/5"
                   >
-                    <span>
-                      <span className="label-eyebrow block text-ink-muted">{row.label}</span>
-                      <span className="mt-1.5 block text-sm">{row.value}</span>
-                    </span>
+                    <span className="text-sm">{row.label}</span>
                     <ArrowUpRight
                       aria-hidden="true"
                       className="size-4 shrink-0 text-ink-muted transition-transform group-hover:-translate-y-0.5"

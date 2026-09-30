@@ -387,7 +387,7 @@ export const TECH_STACK = [
 
 export const DOMAINS = [
   { name: "Technology", note: "Software, web platforms, developer tooling" },
-  { name: "Cricket", note: "Formats, history, statistics and match context" },
+  { name: "Sports", note: "Cricket and other formats, history, statistics and match context" },
   { name: "Indian Culture", note: "Regional context, customs, everyday references" },
   { name: "Literature", note: "Close reading, interpretation, narrative structure" },
   { name: "Philosophy", note: "Argument structure, premises, logical validity" },
