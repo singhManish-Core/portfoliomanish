@@ -47,6 +47,7 @@ function ResumePage() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href={LINKS.resume}
+                    download="Manish_Kumar_Singh_AI_Generalist_Resume.pdf"
                     className="inline-flex items-center gap-2 rounded-sm bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                   >
                     <Download aria-hidden="true" className="size-4" />
@@ -61,9 +62,6 @@ function ResumePage() {
                   </a>
                 </div>
               </div>
-              <p className="mt-6 border-t pt-5 text-xs text-muted-foreground">
-                Resume file and LinkedIn URL are placeholders until you provide them.
-              </p>
             </div>
           </div>
         </Container>
@@ -146,12 +144,12 @@ function ResumePage() {
                   </li>
                   <li>
                     <a href={LINKS.linkedin} className="underline-offset-4 hover:underline">
-                      LinkedIn — link to be added
+                       LinkedIn
                     </a>
                   </li>
                   <li>
                     <a href={LINKS.github} className="underline-offset-4 hover:underline">
-                      GitHub — link to be added
+                       GitHub
                     </a>
                   </li>
                   <li>
@@ -159,7 +157,7 @@ function ResumePage() {
                       href={LINKS.engineeringPortfolio}
                       className="underline-offset-4 hover:underline"
                     >
-                      Engineering Portfolio — link to be added
+                       Engineering Portfolio
                     </a>
                   </li>
                 </ul>

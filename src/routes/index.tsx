@@ -84,13 +84,14 @@ function HomePage() {
                     className="size-4 transition-transform group-hover:translate-x-0.5"
                   />
                 </Link>
-                <Link
-                  to="/resume"
+                 <a
+                   href={LINKS.resume}
+                   download="Manish_Kumar_Singh_AI_Generalist_Resume.pdf"
                   className="inline-flex items-center gap-2 rounded-sm border border-foreground px-5 py-3 text-sm font-medium transition-colors hover:bg-secondary"
                 >
                   <Download aria-hidden="true" className="size-4" />
                   Download Resume
-                </Link>
+                 </a>
                 <a
                   href={LINKS.engineeringPortfolio}
                   className="inline-flex items-center gap-1.5 px-1 py-3 text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -405,11 +406,11 @@ function HomePage() {
             <ul className="overflow-hidden rounded-md border border-ink-border">
               {[
                 { label: "Email", value: LINKS.emailLabel, href: LINKS.email },
-                { label: "LinkedIn", value: "Profile link to be added", href: LINKS.linkedin },
-                { label: "GitHub", value: "Profile link to be added", href: LINKS.github },
+                 { label: "LinkedIn", value: "manish-singh-bb2450285", href: LINKS.linkedin },
+                 { label: "GitHub", value: "singhManish-Core", href: LINKS.github },
                 {
                   label: "Engineering Portfolio",
-                  value: "Portfolio link to be added",
+                   value: "manish-personalportfolio.netlify.app",
                   href: LINKS.engineeringPortfolio,
                 },
               ].map((row) => (

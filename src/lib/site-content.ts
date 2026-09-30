@@ -5,17 +5,15 @@ export const PERSON = {
   tagline: "AI Evaluation • Research • Language • Technology",
 };
 
-/**
- * Placeholder links. No URLs were provided, so these intentionally point
- * nowhere until real destinations are supplied.
- */
+import resumeAsset from "@/assets/Manish_Kumar_Singh_AI_Generalist_Resume.pdf.asset.json";
+
 export const LINKS = {
-  email: "mailto:your-email@example.com",
-  emailLabel: "your-email@example.com",
-  linkedin: "#",
-  github: "#",
-  engineeringPortfolio: "#",
-  resume: "#",
+  email: "mailto:singhmanish.core@gmail.com",
+  emailLabel: "singhmanish.core@gmail.com",
+  linkedin: "https://www.linkedin.com/in/manish-singh-bb2450285/",
+  github: "https://github.com/singhManish-Core",
+  engineeringPortfolio: "https://manish-personalportfolio.netlify.app/",
+  resume: resumeAsset.url,
 };
 
 export const TRUST_METRICS = [
