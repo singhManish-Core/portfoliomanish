@@ -8,8 +8,8 @@ export const PERSON = {
 import resume from "@/assets/manish-kumar-singh-resume.pdf";
 
 export const LINKS = {
-  email: "mailto:singhmanish.core@gmail.com",
-  emailLabel: "singhmanish.core@gmail.com",
+  email: "mailto:manishsingh.core@gmail.com",
+  emailLabel: "manishsingh.core@gmail.com",
   linkedin: "https://www.linkedin.com/in/manish-singh-bb2450285/",
   github: "https://github.com/singhManish-Core",
   engineeringPortfolio: "https://manish-personalportfolio.netlify.app/",
