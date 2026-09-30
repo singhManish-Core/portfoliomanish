@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep uploaded portrait and résumé as Lovable Assets pointers while deriving the tiny public favicon locally; this keeps original binary media out of source control without depending on the CDN for the browser icon.
