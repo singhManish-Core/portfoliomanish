@@ -5,7 +5,7 @@ export const PERSON = {
   tagline: "AI Evaluation • Research • Language • Technology",
 };
 
-import resumeAsset from "@/assets/Manish_Kumar_Singh_AI_Generalist_Resume.pdf.asset.json";
+import resume from "@/assets/manish-kumar-singh-resume.pdf";
 
 export const LINKS = {
   email: "mailto:singhmanish.core@gmail.com",
@@ -13,7 +13,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/manish-singh-bb2450285/",
   github: "https://github.com/singhManish-Core",
   engineeringPortfolio: "https://manish-personalportfolio.netlify.app/",
-  resume: resumeAsset.url,
+  resume: resume,
 };
 
 export const TRUST_METRICS = [

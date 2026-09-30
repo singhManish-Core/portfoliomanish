@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import portraitAsset from "@/assets/manish-kumar-singh-portrait.jpeg.asset.json";
+import portrait from "@/assets/manish-kumar-singh-portrait.jpeg";
 import { Container } from "@/components/site/primitives";
 import { Button } from "@/components/ui/button";
 import { LINKS, PERSON } from "@/lib/site-content";
@@ -50,7 +50,8 @@ export function SiteHeader() {
             aria-label="Manish Kumar Singh — Home"
           >
             <span aria-hidden="true" className="size-12 shrink-0 overflow-hidden rounded-full border-2 border-card bg-accent shadow-card ring-1 ring-border transition-transform duration-300 group-hover:scale-105 sm:size-14">
-              <img src={portraitAsset.url} alt="" className="size-full object-cover object-top" />
+              {/* <img src={portraitAsset.url} alt="" className="size-full object-cover object-top" /> */}
+              <img src={portrait} alt="MS" className="size-full object-cover object-top" />
             </span>
             <span className="min-w-0">
               <span className="block font-display text-[1.22rem] leading-tight font-semibold text-foreground transition-colors group-hover:text-signal sm:text-[1.5rem]">

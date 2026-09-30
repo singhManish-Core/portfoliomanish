@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
-
+import resume from "@/assets/manish-kumar-singh-resume.pdf";
 import { Container, Eyebrow, Reveal, Section, SectionHeader, Tag } from "@/components/site/primitives";
 import { EXPERIENCE, LINKS, PERSON, SKILL_GROUPS, STUDIES } from "@/lib/site-content";
 
@@ -47,7 +47,7 @@ function ResumePage() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href={LINKS.resume}
-                    download="Manish_Kumar_Singh_AI_Generalist_Resume.pdf"
+                    download="manish-kumar-singh-resume.pdf"
                     className="inline-flex items-center gap-2 rounded-sm bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                   >
                     <Download aria-hidden="true" className="size-4" />

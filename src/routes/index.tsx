@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
-
+import resume from "@/assets/manish-kumar-singh-resume.pdf";
 import { ComparisonLab } from "@/components/site/comparison-lab";
 import { FailureLibraryList } from "@/components/site/failure-library";
 import {
@@ -86,7 +86,7 @@ function HomePage() {
                 </Link>
                  <a
                    href={LINKS.resume}
-                   download="Manish_Kumar_Singh_AI_Generalist_Resume.pdf"
+                   download= "manish-kumar-singh-resume.pdf"
                   className="inline-flex items-center gap-2 rounded-sm border border-foreground px-5 py-3 text-sm font-medium transition-colors hover:bg-secondary"
                 >
                   <Download aria-hidden="true" className="size-4" />
